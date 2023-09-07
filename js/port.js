@@ -6,22 +6,27 @@ $(document).ready(function(){
 	const portTop = $("#portfolio").offset().top - 300 ;
 	const port2Top = $("#port2").offset().top - 300 ;
 	const port3Top = $("#port3").offset().top - 200 ;
+	const eventTop = $("#event").offset().top - 200 ;
+	const contactTop = $("#contact").offset().top - 200 ;
 	let scrollTop = 0;
 	//스크롤바를 내리면 상단메뉴 배경색이 보인다.
 	const winHeight = browerTop -100;	
 	$(window).scroll(function(){
 		scrollTop = $(window).scrollTop();
 		
+		//모바일이 아닐때 (800보다 클때)
 		if( $(window).width()> 800  ){
 			if( scrollTop >= winHeight ){
 					$("#top nav").addClass("act");
 			} 
 			else {
 					$("#top nav").removeClass("act");
+					$("#menu a").eq(0).addClass("act").siblings().removeClass("act");
 			}
 		}
 		
 		if(scrollTop >= aboutTop){
+			$("#menu a").eq(1).addClass("act").siblings().removeClass("act");
 			//about에서 skill바 애니메이션
 			$("#photo progress").animate({value: 90});
 			$("#html progress").delay(100).animate({value: 85});
@@ -30,12 +35,19 @@ $(document).ready(function(){
 		}
 		if( scrollTop >= portTop) {
 			$("#port1").addClass("active");
+			$("#menu a").eq(2).addClass("act").siblings().removeClass("act");
 		}
 		if( scrollTop >= port2Top) {
 			$("#port2 div").addClass("active");
 		}
 		if( scrollTop >= port3Top) {
 			$("#port3 div").addClass("active");
+		}
+		if( scrollTop >= eventTop) {
+			$("#menu a").eq(3).addClass("act").siblings().removeClass("act");
+		}
+		if( scrollTop >= contactTop) {
+			$("#menu a").eq(4).addClass("act").siblings().removeClass("act");
 		}
 				
 	});
@@ -59,6 +71,11 @@ $(document).ready(function(){
 		}
 	}
 	type();
+	
+	//상단메뉴 활성화 유지
+	$("#menu a").click(function(){
+		$(this).addClass("act").siblings().removeClass("act");
+	});
 	
 	//메뉴에서 [포트폴리오]클릭
 	$("#menu a:eq(2)").click(function(){

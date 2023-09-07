@@ -47,6 +47,9 @@ h2 {
 	margin-left:20pt;
 	text-shadow:0 0 10px black;
 }
+#menu a:hover, #menu a.act {
+	color:tomato;
+}
 
 /*타자치는 효과*/
 #typing {	
