@@ -42,6 +42,7 @@ $(document).ready(function(){
 		}
 		if( scrollTop >= port3Top) {
 			$("#port3 div").addClass("active");
+			$("#menu a").eq(2).addClass("act").siblings().removeClass("act");
 		}
 		if( scrollTop >= eventTop) {
 			$("#menu a").eq(3).addClass("act").siblings().removeClass("act");

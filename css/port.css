@@ -14,7 +14,7 @@ img {
 a {text-decoration:none;}
 h2 {
 	text-align:center; font-size:3rem; 
-	padding:60pt 0;
+	padding:80pt 0 40pt 0;
 }
 
 
@@ -176,7 +176,7 @@ h2 {
 
 /*첫번째 포폴*/
 #port1 {
-	padding:10vh 0 17vh 0;
+	padding:5vh 0 17vh 0;
 	transform:translateY(200pt); opacity:0;
 	transition:1s;
 }
@@ -267,7 +267,7 @@ h2 {
 	font-weight:300; padding-top:10pt; display:block;
 	font-size:1.5rem;
 }
-#contact .material-symbols-outlined,
+/*  #contact .material-symbols-outlined,   */
 #contact .fas {
 	font-size:9rem; color:skyblue;
 	font-weight:bold; margin-bottom:10pt;
@@ -297,6 +297,10 @@ h2 {
 
 /************ 작은 기계장치 (0~800픽셀 넓이) ************/
 @media(max-width:800px) {
+	h2 {
+		padding-bottom:30pt;
+	}
+	
 	#top nav {
 		padding-right:0; 		
 	}
@@ -357,6 +361,16 @@ h2 {
 	#portfolio a {
 		padding:5pt 4pt 6pt 4pt; letter-spacing:-1pt;
 		font-size:0.98rem;
+	}
+	#port1 {
+		padding-top:0;
+	}
+	/* Contact Us */
+	#contact div {		
+		width:90%;
+	}
+	#contact .fas {
+		font-size:6rem;
 	}
 	
 }/******** (max-width:800px)끝 ********/
