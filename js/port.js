@@ -1,5 +1,19 @@
 $(document).ready(function(){
 	
+	//작은기계장치(넓이: 0~800픽셀)
+	if( $(window).width() <= 800 ){
+		//햄버거 아이콘을 누를때,
+		$("#top button").click(function(){
+			//햄버거 모양이 X 모양으로 변경.
+			$(this).text( "close" );
+			//검정 반투명바탕
+			$("#top nav").css("height" , "100vh");
+			$("#menu").stop().animate({left: 0 });
+		});
+	}
+	
+	
+	
 	//각 주요섹션의 top값을 가져온다
 	const browerTop = $(window).height();
 	const aboutTop = $("#about").offset().top;//836.333...

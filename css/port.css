@@ -38,7 +38,11 @@ h2 {
 	max-width:1300px; margin:auto;
 	display:flex; justify-content:space-between;
 }
-#top nav p {
+
+/*데스크탑에서는 햄버거 아이콘 안보이게 */
+#top button {display:none;}
+
+#top p {
 	color:white; font-size:1.2rem;
 }
 
@@ -303,24 +307,36 @@ h2 {
 	}
 	
 	/*상단(햄버거 + 홍길동이름) */
-	#top > nav {		
-		position:relative;
+	#top {
+
+	}
+	#top nav {		
+		position:relative; /*height:100vh;*/ height:auto;
+		background:rgba(0,0,0, 0.85) !important;
+	}
+	#top nav>div  {
+		position:absolute; width:100%; height:49pt;
+		background:black; left:0; top:0;
+		align-items:flex-start; padding:12pt 10pt 0 10pt;		
 	}
 	#top button {
+		display:block; padding:0 5pt; border:none;
 		background:none; color:white;
-		padding:0 5pt; border:none;
-		font-size:1.7rem;
+		margin-top:3pt; font-size:1.7rem;
 	}
-	#top nav>div p {
-		padding-left:0pt; padding-bottom:7pt;	
+	#top p {
+		padding-bottom:7pt;	
 	}
-	#menu {	
-		/* display:none; */
-		position:absolute;
-		background:red; top:30pt; left:0;
-		width:100%; height:100vh;
+	#menu {		
+		position:absolute; top:49pt; /* left:0;*/ left:-100vw;
+		background:white; width:70%; height:100vh;
+		padding:20pt; box-shadow:5px 0  5px black;
 	}
-	#menu a {margin:0;}		
+	#menu a {
+		margin:0; color:black;
+		display:block; padding:5pt;
+		text-shadow:none;
+	}		
 	
 	#about> div {
 		flex-direction:column;		
