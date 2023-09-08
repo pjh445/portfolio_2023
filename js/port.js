@@ -24,30 +24,48 @@ $(document).ready(function(){
 					$("#menu a").eq(0).addClass("act").siblings().removeClass("act");
 			}
 		}
-		
-		if(scrollTop >= aboutTop){
+		//HOME으로 이동시: ( 메뉴 활성화 )  [0,1,2,3,4]
+		if(scrollTop >= browerTop && scrollTop < aboutTop ){
+			$("#menu a").eq(0).addClass("act").siblings().removeClass("act");
+		}
+		//ABOUT로 이동시: ( SKILL바 애니 + 메뉴 활성화 )
+		if(scrollTop >= aboutTop && scrollTop < portTop ){
 			$("#menu a").eq(1).addClass("act").siblings().removeClass("act");
-			//about에서 skill바 애니메이션
+			//SKILL바 애니메이션
 			$("#photo progress").animate({value: 90});
 			$("#html progress").delay(100).animate({value: 85});
 			$("#jquery progress").delay(200).animate({value: 70});
 			$("#prototype progress").delay(300).animate({value: 80});
 		}
-		if( scrollTop >= portTop) {
+		//PORTFOLIO로 이동시: (첫번째 포폴 나타나는 애니 + 메뉴 활성화)
+		if( scrollTop >= portTop ) {
+			//포폴1 애니
 			$("#port1").addClass("active");
+			//상단 메뉴 활성화  [0,1,2,3,4]
 			$("#menu a").eq(2).addClass("act").siblings().removeClass("act");
 		}
-		if( scrollTop >= port2Top) {
+		//두번째 포폴로 이동시: (두번째 포폴로 나타나는 애니 + 메뉴 활성화)
+		if( scrollTop >= port2Top ) {
+			//포폴2 애니
 			$("#port2 div").addClass("active");
-		}
-		if( scrollTop >= port3Top) {
-			$("#port3 div").addClass("active");
+			//상단 메뉴 활성화  [0,1,2,3,4]
 			$("#menu a").eq(2).addClass("act").siblings().removeClass("act");
 		}
-		if( scrollTop >= eventTop) {
+		//세번째 포폴로 이동시: (두번째 포폴로 나타나는 애니  + 메뉴 활성화)
+		if( scrollTop >= port3Top && scrollTop < eventTop) {
+			//포폴3 애니
+			$("#port3 div").addClass("active");
+			//상단 메뉴 활성화 [0,1,2,3,4]
+			$("#menu a").eq(2).addClass("act").siblings().removeClass("act");
+		}
+		//이벤트디자인 이동시: (메뉴 활성화)
+		if( scrollTop >= eventTop && scrollTop < contactTop) {
+			//상단 메뉴 활성화 [0,1,2,3,4]
 			$("#menu a").eq(3).addClass("act").siblings().removeClass("act");
 		}
-		if( scrollTop >= contactTop) {
+		//Contact Us 이동시: (메뉴 활성화)
+		if( scrollTop >= contactTop ) {
+			//상단 메뉴 활성화 [0,1,2,3,4]
 			$("#menu a").eq(4).addClass("act").siblings().removeClass("act");
 		}
 				
