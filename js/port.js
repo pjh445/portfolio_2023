@@ -4,13 +4,36 @@ $(document).ready(function(){
 	if( $(window).width() <= 800 ){
 		//햄버거 아이콘을 누를때,
 		$("#top button").click(function(){
-			//햄버거 모양이 X 모양으로 변경.
-			$(this).text( "close" );
-			//검정 반투명바탕
-			$("#top nav").css("height" , "100vh");
-			$("#menu").stop().animate({left: 0 });
+			if( $(this).text() == "menu" ){
+				//햄버거 모양이 X 모양으로 변경.
+				$(this).text( "close" );
+				//검정 반투명바탕
+				$("#top nav").css("height" , "100vh");
+				$("#menu").stop().animate({left: 0 });
+				//스크롤방지
+				$("body").css("overflow","hidden");
+			} else {
+				//X 모양이 햄버거 모양로 변경.
+				$(this).text( "menu" );
+				//검정 반투명바탕
+				$("#top nav").css("height" , "auto");
+				$("#menu").stop().animate({left: "-100vw" });
+				//스크롤방지
+				$("body").css("overflow","auto");
+			}
 		});
-	}
+		//상단메뉴 항목을 누를때
+		$("#menu a").click(function(){
+			//스크롤 허용
+			$("body").css("overflow","auto");
+			//햄버거 모양이 X 모양으로 변경.
+			$("#top button").text( "menu" );
+			//검정 반투명바탕
+			$("#top nav").css("height" , "auto");
+			$("#menu").stop().animate({left: "-100vw" },100);
+		});
+		
+	}////////////////작은기계장치: 끝
 	
 	
 	
@@ -39,7 +62,7 @@ $(document).ready(function(){
 			}
 		}
 		//HOME으로 이동시: ( 메뉴 활성화 )  [0,1,2,3,4]
-		if(scrollTop >= browerTop && scrollTop < aboutTop ){
+		if(scrollTop < aboutTop ){
 			$("#menu a").eq(0).addClass("act").siblings().removeClass("act");
 		}
 		//ABOUT로 이동시: ( SKILL바 애니 + 메뉴 활성화 )

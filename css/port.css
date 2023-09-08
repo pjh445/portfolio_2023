@@ -80,8 +80,7 @@ h2 {
 
 /*자기소개*/
 #about {
-	background:#ddd;
-	padding-bottom:30pt; border:3px solid blue;
+	background:#ddd; padding-bottom:30pt;
 }
 #about img {
 	max-width:220pt; margin:auto;
@@ -129,7 +128,6 @@ h2 {
 #portfolio {	
 	padding-left:20pt; padding-right:20pt;
 	max-width:1400px; margin:auto; overflow:hidden;
-	border:5px solid red;
 }
 #portfolio section {
 	display:flex;	
@@ -311,7 +309,8 @@ h2 {
 
 	}
 	#top nav {		
-		position:relative; /*height:100vh;*/ height:auto;
+		position:fixed; /*height:100vh;*/ height:auto;
+		width:100%;
 		background:rgba(0,0,0, 0.85) !important;
 	}
 	#top nav>div  {
@@ -329,7 +328,7 @@ h2 {
 	}
 	#menu {		
 		position:absolute; top:49pt; /* left:0;*/ left:-100vw;
-		background:white; width:70%; height:100vh;
+		background:white; width:70%; height:90vh;
 		padding:20pt; box-shadow:5px 0  5px black;
 	}
 	#menu a {
