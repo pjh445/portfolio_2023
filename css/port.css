@@ -22,7 +22,7 @@ h2 {
 /*헤더 배경이미지 */
 #top {
 	height:100vh; position:relative;
-	background:url("https://pjh445.github.io/portfolio_2023/images/bg.jpg") no-repeat fixed center top/cover;
+	background:url("./images/bg.jpg") no-repeat fixed center top/cover;
 	top:0; left:0; right:0; bottom:0;
 }
 
