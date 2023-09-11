@@ -22,8 +22,8 @@ h2 {
 /*헤더 배경이미지 */
 #top {
 	height:100vh; position:relative;
-	background:url("images/bg.jpg") no-repeat fixed center top;
-	background-size: 100vmax 100vmax;
+	background:url("images/bg.jpg") no-repeat center top fixed;
+	background-size: cover;
 }
 
 /*상단메뉴*/
